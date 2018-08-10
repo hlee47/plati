@@ -9,7 +9,6 @@ class Header extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        search: false
       };
       this.scrollToTop = this.scrollToTop.bind(this);
     }
@@ -23,11 +22,9 @@ class Header extends React.Component {
         <div className="header">
           <div className="header-wrapper">
             <nav className="navbar navbar-expand-sm h-100">
-
               <a className="navbar-brand mx-auto" onClick={this.scrollToTop} href="#">
                 <img className="img-fluid" src="images/logo.png" alt=""/>
               </a>
-            
             </nav>
           </div>
         </div>

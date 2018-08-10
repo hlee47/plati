@@ -22,74 +22,25 @@ export default function authentication(state, action) {
   switch(action.type) {
     /* LOGIN */
      case types.AUTH_LOGIN:
-       return update(state, {
-         login: {
-           status: { $set: 'WAITING' }
-         }
-       });
+       return
      case types.AUTH_LOGIN_SUCCESS:
-       return update(state, {
-         login: {
-           status: { $set: 'SUCCESS' }
-         },
-         status: {
-           isLoggedIn: { $set: true },
-           currentUser: { $set: action.username }
-         }
-       });
+       return
      case types.AUTH_LOGIN_FAILURE:
-       return update(state, {
-         login: {
-           status: { $set: 'FAILURE' }
-         }
-       });
+       return
       case types.AUTH_REGISTER:
-        return update(state, {
-          register: {
-            status: { $set: 'WAITING' },
-            error: { $set: -1 }
-          }
-        });
+        return
       case types.AUTH_REGISTER_SUCCESS:
-        return update(state, {
-          register: {
-            status: { $set: 'SUCCESS'}
-          }
-        });
+        return
       case types.AUTH_REGISTER_FAILURE:
-        return update(state, {
-          register: {
-            status: { $set: 'FAILURE' },
-            error: { $set: action.error }
-          }
-        });
+        return
       case types.AUTH_GET_STATUS:
-        return update(state, {
-          status: {
-            isLoggedIn: { $set: true }
-          }
-        });
+        return
       case types.AUTH_GET_STATUS_SUCCESS:
-        return update(state, {
-          status: {
-            valid: { $set: true },
-            currentUser: { $set: action.username }
-          }
-        });
+        return
       case types.AUTH_GET_STATUS_FAILURE:
-        return update(state, {
-          status: {
-            valid: { $set: false },
-            isLoggedIn: { $set: false }
-          }
-        });
+        return
       case types.AUTH_LOGOUT:
-        return update(state, {
-          status: {
-            isLoggedIn: { $set: false },
-            currentUser: { $set: '' }
-          }
-        });
+        return 
      default:
        return state;
   }

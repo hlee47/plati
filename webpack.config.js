@@ -43,6 +43,6 @@ module.exports = {
           compress:{
             warnings: true
           }
-        })
+        }),
     ]
 };

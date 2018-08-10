@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reducers from 'reducers';
 import thunk from 'redux-thunk';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
@@ -17,8 +18,10 @@ store.subscribe(() => console.log(store.getState()));
 const rootElement = document.getElementById('root');
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <Route path="/" component={App}/>
-    </BrowserRouter>
+    <ParallaxProvider>
+      <BrowserRouter>
+        <Route path="/" component={App}/>
+      </BrowserRouter>
+    </ParallaxProvider>
   </Provider>, rootElement
 );
